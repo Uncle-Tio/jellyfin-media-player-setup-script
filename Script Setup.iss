@@ -40,7 +40,7 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Filename: "{tmp}\JellyfinMediaPlayer-1.9.1-windows-x64.exe"; Parameters: "/passive"
 
 [Files]
+Source: "C:\ProjectFolder\JellyfinMediaPlayer-1.9.1-windows-x64.exe"; DestDir: "{tmp}";
 Source: "C:\ProjectFolder\jellyfinmediaplayer.conf"; DestDir: "{localappdata}\JellyfinMediaPlayer"; Flags: ignoreversion
 Source: "C:\ProjectFolder\main.jellyfin.bundle.js"; DestDir: "C:\Program Files\Jellyfin\Jellyfin Media Player\web-client\desktop"; Flags: ignoreversion
-Source: "C:\ProjectFolder\JellyfinMediaPlayer-1.9.1-windows-x64.exe"; DestDir: "{tmp}";
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
