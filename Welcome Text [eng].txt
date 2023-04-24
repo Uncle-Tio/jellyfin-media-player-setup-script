@@ -1,0 +1,14 @@
+﻿Welcome to the Jellyfin install modifier.
+
+What this setup does:
+
+- Update settings file.
+- Enable backdrop/background images by default.
+- Enable Intro Skipper and Scrub plugins.
+- Set audio to automatic.
+- Allow and prefer HEVC.
+- Disable external client.
+
+More details: https://github.com/Uncle-Tio/jellyfin-media-player-setup-script
+
+Click "Next" to install.
