@@ -17,13 +17,12 @@ You can modify and [compile](https://github.com/Uncle-Tio/jellyfin-media-player-
 *This script doesn't create its own uninstallers (JellyfinMediaPlayer does).*
 
 ### Modifications made by the setup:
-- In this setup the external web-client is disabled.
-- In the embedded Web-client, the `main.jellyfin.bundle.js` file was modified, more precisely the `enableBackdrops:function(){return P}` line was changed to `enableBackdrops:function(){return x}`. This enable the backdrops/background images
+- In the embedded Web-client, `main.jellyfin.bundle.js` was modified, `enableBackdrops:function(){return P}` line was changed to `enableBackdrops:function(){return x}`. This enable the backdrops/background images
 - Replaces/creates settings file, replacements include:
 1. Enable [Intro Skipper](https://github.com/ConfusedPolarBear/intro-skipper) and [Scrub plugins](https://github.com/nicknsy/jellyscrub).
 2. Audio set to automatic.
 3. Allow and prefer HEVC.
-4. Disable external web-client.
+4. Disable external web-client if enabled.
 - Embedded media player installer installs "passively" (minimal gui without prompts).
 
 ## Showcase
