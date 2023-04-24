@@ -27,7 +27,7 @@ You can modify and [compile](https://github.com/Uncle-Tio/jellyfin-media-player-
 - Embedded media player installer installs "passively" (minimal gui without prompts).
 
 ## Showcase
-![SetupShowcase]()
+![SetupShowcase](https://cdn.discordapp.com/attachments/1072678455478587462/1100083902242095154/Compil32_gHvN44oKpQ.gif)
 
 # Compile
 
