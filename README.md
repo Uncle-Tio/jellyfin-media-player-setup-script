@@ -1,10 +1,9 @@
 # Inno Setup Script
-[About Inno](https://jrsoftware.org/isinfo.php)
+### [What is Inno?](https://jrsoftware.org/isinfo.php)
 
 This is a script I made to modify and update (works for a fresh install) the [Jellyfin Media Player](https://github.com/jellyfin/jellyfin-media-player) configuration file.
-It should be possible to do it directly in Jellyfin, but this is the easy way.
-
-*Includes Jellyfin Media Player installer for updates or fresh installs.*
+The easy way.
+> Includes Jellyfin Media Player installer for updates or fresh installs.
 
 You can modify and [compile](https://github.com/Uncle-Tio/jellyfin-media-player-setup-script#compile) it to suit your needs.
 
@@ -14,16 +13,18 @@ You can modify and [compile](https://github.com/Uncle-Tio/jellyfin-media-player-
 2. Place the `jellyfinmediaplayer.conf` file in the `C:\Users\YOURNAME\Appdata\Local\JellyfinMediaPlayer` folder.
 3. Place the `main.jellyfin.bundle.js` file in the `C:\Program Files\Jellyfin\Jellyfin Media Player\web-client\desktop` folder.
 
-*This script doesn't create its own uninstallers (JellyfinMediaPlayer does).*
+> This script doesn't create its own uninstallers (JellyfinMediaPlayer does).
 
 ### Modifications made by the setup:
-- In the embedded Web-client, `main.jellyfin.bundle.js` was modified, `enableBackdrops:function(){return P}` line was changed to `enableBackdrops:function(){return x}`. This enable the backdrops/background images
+- In the embedded Web-client, `main.jellyfin.bundle.js` was modified:
+<br>`enableBackdrops:function(){return P}` line was changed to `enableBackdrops:function(){return x}`.
+> This enable the backdrops/background images.
 - Replaces/creates settings file, replacements include:
-1. Enable [Intro Skipper](https://github.com/ConfusedPolarBear/intro-skipper) and [Scrub plugins](https://github.com/nicknsy/jellyscrub).
-2. Audio set to automatic.
-3. Allow and prefer HEVC.
-4. Disable external web-client if enabled.
-- Embedded media player installer installs "passively" (minimal gui without prompts).
+> 1. Enable [Intro Skipper](https://github.com/ConfusedPolarBear/intro-skipper) and [Scrub plugins](https://github.com/nicknsy/jellyscrub).
+> 2. Audio set to automatic.
+> 3. Allow and prefer HEVC.
+> 4. Disable external web-client if enabled.
+- Embedded media player installer runs passively (no prompts and minimal UI).
 
 ## Showcase
 ![SetupShowcase](https://cdn.discordapp.com/attachments/1072678455478587462/1100083902242095154/Compil32_gHvN44oKpQ.gif)
