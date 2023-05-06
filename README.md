@@ -1,7 +1,7 @@
 # Inno Setup Script
 ### [What is Inno?](https://jrsoftware.org/isinfo.php)
 
-This is a script I made to modify and update the [Jellyfin Media Player](https://github.com/jellyfin/jellyfin-media-player) configuration or file. The easy way.
+This is a script I made to modify and update the [Jellyfin Media Player](https://github.com/jellyfin/jellyfin-media-player) configuration or files. The easy way.
 > Includes Jellyfin Media Player installer for updates or fresh installs.
 
 You can modify and [compile](https://github.com/Uncle-Tio/jellyfin-media-player-setup-script#compile) it to suit your needs.
