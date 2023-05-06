@@ -48,15 +48,16 @@ function CopyFile(Source, Dest: String): Boolean;
 begin
   Result := True;
   try
-    FileCopy(Source, Dest, True);
-    // Change to 'False' if you don't want to allow overwrite
+    ForceDirectories(ExtractFilePath(Dest));  // Make sure the destination directory exists
+    if FileExists(Dest) then                  // (to disable overwrite, remove this line, the one above and the one below)
+      DeleteFile(Dest);                       // Delete existing file
+    FileCopy(Source, Dest, False);
   except
     Result := False;
   end;
 end;
 
 [Run]
-; Run Jellyfin Media Player setup passively (no prompts)
 Filename: "{tmp}\JellyfinMediaPlayer-1.9.1-windows-x64.exe"; Parameters: "/passive /norestart"; AfterInstall: CopyFiles
 
 [Code]
@@ -68,6 +69,6 @@ begin
     MsgBox('Error copying jellyfinmediaplayer.conf', mbError, MB_OK);
   
   // Copy main.jellyfin.bundle.js to C:\Program Files\Jellyfin\Jellyfin Media Player\web-client\desktop
-  if not CopyFile(ExpandConstant('{tmp}\main.jellyfin.bundle.js'), ExpandConstant('C:\Program Files\Jellyfin\Jellyfin Media Player\web-client\desktop\main.jellyfin.bundle.js')) then
+  if not CopyFile(ExpandConstant('{tmp}\main.jellyfin.bundle.js'), ExpandConstant('{commonpf64}\Jellyfin\Jellyfin Media Player\web-client\desktop\main.jellyfin.bundle.js')) then
     MsgBox('Error copying main.jellyfin.bundle.js', mbError, MB_OK);
 end;
