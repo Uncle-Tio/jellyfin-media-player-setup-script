@@ -29,7 +29,7 @@ ShowLanguageDialog=auto
 ArchitecturesInstallIn64BitMode=x64
 RestartIfNeededByRun=False
 AllowCancelDuringInstall=False
-VersionInfoVersion=1.2.0.0
+VersionInfoVersion=1.2.5.0
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
@@ -41,34 +41,15 @@ Source: "C:\ProjectFolder\JellyfinMediaPlayer-1.9.1-windows-x64.exe"; DestDir: "
 Source: "C:\ProjectFolder\jellyfinmediaplayer.conf"; DestDir: "{tmp}"; Flags: ignoreversion
 ; Extract main.jellyfin.bundle.js (Windows temp folder)
 Source: "C:\ProjectFolder\main.jellyfin.bundle.js"; DestDir: "{tmp}"; Flags: ignoreversion
-
-[Code]
-// Function to copy a file
-function CopyFile(Source, Dest: String): Boolean;
-begin
-  Result := True;
-  try
-    ForceDirectories(ExtractFilePath(Dest));  // Make sure the destination directory exists
-    if FileExists(Dest) then                  // (to disable overwrite, remove this line, the one above and the one below)
-      DeleteFile(Dest);                       // Delete existing file
-    FileCopy(Source, Dest, False);
-  except
-    Result := False;
-  end;
-end;
+; Extract mpv.conf (Windows temp folder)
+; Source: "C:\ProjectFolder\mpv.conf"; DestDir: "{tmp}"; Flags: ignoreversion
 
 [Run]
-Filename: "{tmp}\JellyfinMediaPlayer-1.9.1-windows-x64.exe"; Parameters: "/passive /norestart"; AfterInstall: CopyFiles
+Filename: "{tmp}\JellyfinMediaPlayer-1.9.1-windows-x64.exe"; Parameters: "/passive /norestart"; Flags: waituntilterminated
 
-[Code]
-// Function to copy files after installation
-procedure CopyFiles;
-begin
-  // Copy jellyfinmediaplayer.conf to {localappdata}\JellyfinMediaPlayer
-  if not CopyFile(ExpandConstant('{tmp}\jellyfinmediaplayer.conf'), ExpandConstant('{localappdata}\JellyfinMediaPlayer\jellyfinmediaplayer.conf')) then
-    MsgBox('Error copying jellyfinmediaplayer.conf', mbError, MB_OK);
-  
-  // Copy main.jellyfin.bundle.js to C:\Program Files\Jellyfin\Jellyfin Media Player\web-client\desktop
-  if not CopyFile(ExpandConstant('{tmp}\main.jellyfin.bundle.js'), ExpandConstant('{commonpf64}\Jellyfin\Jellyfin Media Player\web-client\desktop\main.jellyfin.bundle.js')) then
-    MsgBox('Error copying main.jellyfin.bundle.js', mbError, MB_OK);
-end;
+Filename: "{sys}\cmd"; Parameters: "/C move /Y ""{tmp}\jellyfinmediaplayer.conf"" ""{localappdata}\JellyfinMediaPlayer\"""; Flags: runhidden
+Filename: "{sys}\cmd"; Parameters: "/C move /Y ""{tmp}\main.jellyfin.bundle.js"" ""{commonpf64}\Jellyfin\Jellyfin Media Player\web-client\desktop\"""; Flags: runhidden
+; Filename: "{sys}\cmd"; Parameters: "move /Y ""{tmp}\mpv.conf"" ""{localappdata}\JellyfinMediaPlayer\"""; Flags: runhidden
+; /C = execute a command and then close the command prompt.
+; /Y = automatically replace the destination file if it already exists.
+; replace 'move' with 'copy' and remove the /Y if you don't want it replaced.
