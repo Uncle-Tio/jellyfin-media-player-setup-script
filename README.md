@@ -8,7 +8,7 @@ You can modify and [compile](https://github.com/Uncle-Tio/jellyfin-media-player-
 
 # What the script does:
 
-1. Run `JellyfinMediaPlayer-1.9.1-windows-x64.exe` with the parameter `/passive` (displays minimal UI with no prompts).
+1. Run `JellyfinMediaPlayer-1.9.1-windows-x64.exe` with the parameter `/passive /norestart` (minimal UI with no prompts).
 2. Place the `jellyfinmediaplayer.conf` file in the `C:\Users\YOURNAME\Appdata\Local\JellyfinMediaPlayer` folder.
 3. Place the `main.jellyfin.bundle.js` file in the `C:\Program Files\Jellyfin\Jellyfin Media Player\web-client\desktop` folder.
 
@@ -37,8 +37,10 @@ To compile yourself, follow these steps:
 2. [Download the repository](https://github.com/Uncle-Tio/jellyfin-media-player-setup-script/archive/refs/heads/main.zip).
 3. Extract the files to `C:\ProjectInno\` (if you prefer not to readjust the paths).
 4. Download the [original](https://github.com/jellyfin/jellyfin-media-player/releases/download/v1.9.1/JellyfinMediaPlayer-1.9.1-windows-x64.exe) setup, and move to the same folder.
-5. Modify `main.jellyfin.bundle.js`, `jellyfinmediaplayer.conf` and (optional) `mpv.conf` to suit your requirements.
-6. Open `Setup Script.iss` and make any necessary modifications (if any).
+
+   > In the latest version I've included some corrections, if you want to include them too, [download this one](https://github.com/Uncle-Tio/jellyfin-media-player-beta/releases/tag/v1.9.1).
+6. Modify `main.jellyfin.bundle.js`, `jellyfinmediaplayer.conf` and (optional) `mpv.conf` to suit your requirements.
+7. Open `Setup Script.iss` and make any necessary modifications (if any).
 
    > Remove `;` in line 52 if you want to include mpv.conf
 8. Press F9, wait for the process to finish and test. Look for the Output folder and there is the new compiled setup.
