@@ -1,13 +1,13 @@
 ﻿Welcome to the Jellyfin install modifier.
 
-What this setup does:
+What changes have been made:
 
-- Update settings file.
+- Update embbed Web Client (10.8.13).
 - Enable backdrop/background images by default.
 - Enable Intro Skipper and Scrub plugins.
 - Set audio to automatic.
 - Allow and prefer HEVC.
-- Disable external client.
+- Set cache to very large.
 
 More details: https://github.com/Uncle-Tio/jellyfin-media-player-setup-script
 

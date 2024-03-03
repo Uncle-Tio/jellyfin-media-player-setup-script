@@ -1,5 +1,5 @@
 #define MyAppName "Jellyfin"
-#define MyAppVersion "1.9.1 - Inno v1.2"
+#define MyAppVersion "1.9.1 - Inno v1.3"
 #define MyAppPublisher "Jellyfin"
 #define MyAppURL "https://github.com/jellyfin/jellyfin-media-player"
 #define MyAppExeName "JellyfinMediaPlayer.exe"
@@ -19,7 +19,7 @@ CreateAppDir=no
 InfoBeforeFile="C:\ProjectFolder\Welcome Text [eng].txt"
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 ;PrivilegesRequired=lowest
-OutputBaseFilename=JellyfinMediaPlayer-1.9.1-Inno-English
+OutputBaseFilename="Jellyfin Media Player 1.9.1 - Inno 1.3.0"
 SetupIconFile="C:\ProjectFolder\icon-transparent.ico"
 Compression=none
 WizardStyle=modern
@@ -29,7 +29,7 @@ ShowLanguageDialog=auto
 ArchitecturesInstallIn64BitMode=x64
 RestartIfNeededByRun=False
 AllowCancelDuringInstall=False
-VersionInfoVersion=1.2.5.0
+VersionInfoVersion=1.3.0.0
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
