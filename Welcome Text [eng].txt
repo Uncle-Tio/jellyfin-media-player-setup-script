@@ -2,9 +2,8 @@
 
 What changes have been made:
 
-- Update embbed Web Client (10.8.13).
 - Enable backdrop/background images by default.
-- Enable Intro Skipper and Scrub plugins.
+- Enable Intro Skipper.
 - Set audio to automatic.
 - Allow and prefer HEVC.
 - Set cache to very large.
