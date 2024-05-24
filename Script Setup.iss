@@ -1,5 +1,5 @@
 #define MyAppName "Jellyfin"
-#define MyAppVersion "1.10.0 - Inno v1.3"
+#define MyAppVersion "1.10.1 - Inno v1.3"
 #define MyAppPublisher "Jellyfin"
 #define MyAppURL "https://github.com/jellyfin/jellyfin-media-player"
 #define MyAppExeName "JellyfinMediaPlayer.exe"
@@ -19,7 +19,7 @@ CreateAppDir=no
 InfoBeforeFile="C:\ProjectFolder\Welcome Text [eng].txt"
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 ;PrivilegesRequired=lowest
-OutputBaseFilename="Jellyfin Media Player 1.10.0 - Inno 1.3.0"
+OutputBaseFilename="Jellyfin Media Player 1.10.1 - Inno 1.3.0"
 SetupIconFile="C:\ProjectFolder\icon-transparent.ico"
 Compression=none
 WizardStyle=modern
@@ -36,7 +36,7 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 
 [Files]
 ; Extract Jellyfin Media Player Setup (Windows temp folder)
-Source: "C:\ProjectFolder\JellyfinMediaPlayer-1.10.0-windows-x64.exe"; DestDir: "{tmp}";
+Source: "C:\ProjectFolder\JellyfinMediaPlayer-1.10.1-windows-x64.exe"; DestDir: "{tmp}";
 ; Extract jellyfinmediaplayer.conf (Windows temp folder)
 Source: "C:\ProjectFolder\jellyfinmediaplayer.conf"; DestDir: "{tmp}"; Flags: ignoreversion
 ; Extract main.jellyfin.bundle.js (Windows temp folder)
@@ -45,7 +45,7 @@ Source: "C:\ProjectFolder\main.jellyfin.bundle.js"; DestDir: "{tmp}"; Flags: ign
 ; Source: "C:\ProjectFolder\mpv.conf"; DestDir: "{tmp}"; Flags: ignoreversion
 
 [Run]
-Filename: "{tmp}\JellyfinMediaPlayer-1.10.0-windows-x64.exe"; Parameters: "/passive /norestart"; Flags: waituntilterminated
+Filename: "{tmp}\JellyfinMediaPlayer-1.10.1-windows-x64.exe"; Parameters: "/passive /norestart"; Flags: waituntilterminated
 
 Filename: "{sys}\cmd"; Parameters: "/C move /Y ""{tmp}\jellyfinmediaplayer.conf"" ""{localappdata}\JellyfinMediaPlayer\"""; Flags: runhidden
 Filename: "{sys}\cmd"; Parameters: "/C move /Y ""{tmp}\main.jellyfin.bundle.js"" ""{commonpf64}\Jellyfin\Jellyfin Media Player\web-client\desktop\"""; Flags: runhidden
