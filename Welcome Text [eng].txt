@@ -2,7 +2,6 @@
 
 What changes have been made:
 
-- Enable backdrop/background images by default.
 - Enable Intro Skipper.
 - Set audio to automatic.
 - Allow and prefer HEVC.

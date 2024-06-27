@@ -1,4 +1,12 @@
 # Inno Setup Script
+
+⚠️ It's no longer possible to activate backdrops in the Media Player's internal web-client, now you have to do it in the server's web-client.
+- Theoretically, you need to modify `main.jellyfin.bundle.js` on `~\Jellyfin\jellyfin-web`.
+  <br>`enableBackdrops:function(){return _}` change to `{return x}`.
+But I don't know if it still works, you can compile the web to force it always active, take a look [here](https://github.com/Uncle-Tio/jweb-fork/commits/release-10.9.z?author=Uncle-Tio). Bear in mind that I'm not a dev. There must be a better way of doing it.
+
+This setup has lost some of its usefulness as I've found better ways to get what I want, but I'll keep it around in case anyone still finds it useful.
+
 ### [What is Inno?](https://jrsoftware.org/isinfo.php)
 
 This is a script I made to modify and update the [Jellyfin Media Player](https://github.com/jellyfin/jellyfin-media-player) configuration or files. The easy way.
@@ -8,16 +16,11 @@ You can/should modify and [compile](https://github.com/Uncle-Tio/jellyfin-media-
 
 # What the script does:
 
-1. Run `JellyfinMediaPlayer-1.10.0-windows-x64.exe` with the parameter `/passive /norestart` (minimal UI with no prompts).
+1. Run `JellyfinMediaPlayer-(Version)-windows-x64.exe` with the parameter `/passive /norestart` (minimal UI with no prompts).
+> This script doesn't create its own uninstallers.
 2. Place the `jellyfinmediaplayer.conf` file in the `C:\Users\YOURNAME\Appdata\Local\JellyfinMediaPlayer` folder.
-3. Place the `main.jellyfin.bundle.js` file in the `C:\Program Files\Jellyfin\Jellyfin Media Player\web-client\desktop` folder.
-
-> This script doesn't create its own uninstallers (Original uninstaller is enough).
 
 ### Modifications made by the setup:
-- Modified `main.jellyfin.bundle.js`.
-  <br>`enableBackdrops:function(){return P}` changed to `{return x}`.
-> Enables backdrops/background images by default.
 - Replaces/creates settings file, replacements include:
 > 1. Enable [Intro Skipper](https://github.com/jumoog/intro-skipper).
 > 2. Audio set to automatic.
