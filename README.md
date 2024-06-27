@@ -38,7 +38,7 @@ To compile yourself, follow these steps:
 1. Download and Install [Inno Setup](https://jrsoftware.org/isdl.php#stable).
 2. [Download the repository](https://github.com/Uncle-Tio/jellyfin-media-player-setup-script/archive/refs/heads/main.zip).
 3. Extract the files to `C:\ProjectInno\` (if you prefer not to readjust the paths).
-4. Download the [original](https://github.com/jellyfin/jellyfin-media-player/releases/download/v1.10.1/JellyfinMediaPlayer-1.10.1-windows-x64.exe) setup, and move to the same folder.
+4. Download the original setup, and move to the same folder.
 6. Modify `main.jellyfin.bundle.js`, `jellyfinmediaplayer.conf` and (optional) `mpv.conf` to suit your requirements.
 7. Open `Setup Script.iss` and make any necessary modifications (if any).
 
