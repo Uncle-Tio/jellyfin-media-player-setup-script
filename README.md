@@ -2,7 +2,7 @@
 
 ⚠️ It's no longer possible to activate backdrops in the Media Player's internal web-client, now you have to do it in the server's web-client.
 - Theoretically, you need to modify `main.jellyfin.bundle.js` on `~\Jellyfin\jellyfin-web`.
-  <br>`enableBackdrops:function(){return _}` change to `{return x}`.
+  <br>`enableBackdrops:function(){return _}` change to `{return P}`.
 But I don't know if it still works, you can compile the web to force it always active, take a look [here](https://github.com/Uncle-Tio/jweb-fork/commits/release-10.9.z?author=Uncle-Tio). Bear in mind that I'm not a dev. There must be a better way of doing it.
 
 This setup has lost some of its usefulness as I've found better ways to get what I want, but I'll keep it around in case anyone still finds it useful.
